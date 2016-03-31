@@ -1,0 +1,7 @@
+argparse
+greenlet>=0.3.2 # MIT
+psutil>=4.1.0 # BSD
+retrying!=1.3.0,>=1.2.3 # Apache-2.0
+six>=1.9.0 # MIT
+dicttoxml==1.6.6
+xmltodict==0.10.1
