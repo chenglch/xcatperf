@@ -1,0 +1,12 @@
+Listen 8086
+<VirtualHost *:8086>
+AliasMatch ^/(.*)$ "/opt/nytprof/nytprof/$1"
+<Directory "/opt/nytprof/nytprof">
+    Options Indexes FollowSymLinks Includes MultiViews
+    AllowOverride None
+    Require all granted
+</Directory>
+    ErrorLog /var/log/apache2/xcat_doc_error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/xcat_doc_access.log combined
+</VirtualHost>

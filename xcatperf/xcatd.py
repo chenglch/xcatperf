@@ -42,6 +42,8 @@ class Daemon(object):
         if is_nytprof:
             if nytprof_dir:
                 utils.ensure_tree(nytprof_dir)
+            # by default nytprf command will generate output files in the
+            # working directory
             os.chdir(nytprof_dir)
         args = ""
         env = os.environ

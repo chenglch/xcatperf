@@ -53,6 +53,7 @@ class DeflsCase(base.BaseCase, DeflsEnv):
     def run(self, concurrency=1):
         self._setup()
         func_list = [self._list_nodes, self._list_node_detail]
+        print "Test xcat in command line mode."
         self.spawn(concurrency, func_list)
         self._teardown()
 
@@ -77,6 +78,7 @@ class DeflsRawCase(base.RawCase, DeflsEnv):
     def run(self, concurrency=1):
         self._setup()
         func_list = [self._list_nodes, self._list_node_detail]
+        print "Test xcat in xml mode."
         self.spawn(concurrency, func_list)
         self._teardown()
 
@@ -92,5 +94,6 @@ class DeflsRestCase(base.RestCase, DeflsEnv):
     def run(self, concurrency=1):
         self._setup()
         func_list = [self._list_nodes]
+        print "Test xcat in rest api mode."
         self.spawn(concurrency, func_list)
         self._teardown()
