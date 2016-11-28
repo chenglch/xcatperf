@@ -36,7 +36,7 @@ class PerfShell(object):
                             help="The amount of nodes or records to registed "
                                  "in xcat as test data",
                             type=int,
-                            default=10)
+                            default=1)
         parser.add_argument('--is-nytprof',
                             help="Enable nytprof in xcatd or not",
                             type=bool,
