@@ -6,6 +6,7 @@ from xcatperf.common import exception
 PERF_TRACE_LOG = '/var/log/xcat/perf.log'
 PLUGIN_TOKEN = 'plugin'
 IMMEDIATE_TOKEN = 'immediate'
+DB_TOKEN = 'db'
 NYTPROF_FILE = 'nytprof.out.%s'
 
 
@@ -44,6 +45,11 @@ class Nytprof(object):
                 data_file = os.path.join(dir, NYTPROF_FILE % pid)
                 p_info = ProcessInfo(fields[2], fields[3], data_file,
                                      fields[4])
+            if fields[1] == DB_TOKEN:
+                pid = fields[2]
+                data_file = os.path.join(dir, NYTPROF_FILE % pid)
+                p_info = ProcessInfo(fields[2], fields[3], data_file)
+
             if p_info:
                 self.p_info_list.append(p_info)
 
